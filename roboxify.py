@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+
+"""roboxify.py: alters gcode files for printing on CEL Robox 3D printer."""
+
 import re
 import sys
 import math
@@ -6,30 +10,30 @@ commentCharRE = re.compile( r"\S*;" )
 gRE = re.compile( r"G\S*" )
 xRE = re.compile( r"X\S*" )
 yRE = re.compile( r"Y\S*" )
-zRE = re.compile( r"Z\S*" )
+#zRE = re.compile( r"Z\S*" )
 eRE = re.compile( r"E\S*" )
-fRE = re.compile( r"F\S*" )
+#fRE = re.compile( r"F\S*" )
 bRE = re.compile( r"B\S*" )
 
 line = "; none"
 
 currentX = 0
 currentY = 0
-currentZ = 0
+#currentZ = 0
 currentE = 0
-currentF = 0
+#currentF = 0
 currentB = 0
 lineX = 0
 lineY = 0
-lineZ = 0
+#lineZ = 0
 lineE = 0
-lineF = 0
+#lineF = 0
 lineB = 0
 changeX = 0
 changeY = 0
-changeZ = 0
+#changeZ = 0
 changeE = 0
-changeF = 0
+#changeF = 0
 changeB = 0
 existingB0 = []
 existingB1 = []
@@ -63,9 +67,9 @@ for i, command in enumerate(fr):
 		gMatch = gRE.match( line )
 		xMatch = xRE.search( line )
 		yMatch = yRE.search( line )
-		zMatch = zRE.search( line )
+		#zMatch = zRE.search( line )
 		eMatch = eRE.search( line )
-		fMatch = fRE.search( line )
+		#fMatch = fRE.search( line )
 		bMatch = bRE.search( line )
 		
 		if gMatch:
